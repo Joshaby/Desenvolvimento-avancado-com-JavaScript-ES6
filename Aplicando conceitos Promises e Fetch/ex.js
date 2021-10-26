@@ -99,15 +99,15 @@ myPromise.then(
 );
 
 const myPromise1 = new Promise((resolve, reject) => {
-    resolve("3");
-    reject("4");
+    resolve("resolve", "3");
+    reject("reject", "4");
 });
 
 myPromise1.then(
-    function(value) {
-        console.log("resolve", value);
-    },
-    function(value) {
-        console.log("reject", value);
+    (type, value) => {
+        console.log(type, value);
+    }, 
+    (type, value) => {
+        console.log(type, value);
     }
 );
