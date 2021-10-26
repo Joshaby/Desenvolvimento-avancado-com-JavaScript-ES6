@@ -33,7 +33,7 @@ console.log(arr1.next())
 
 const obj1 = {
     values: [1, 2, 3, 4],
-    [Symbol.iterator]() {
+    [Symbol.iterator]() { // Evita colisão de nome de propriedades
         let i = 0;
         return {
             next: () => {
